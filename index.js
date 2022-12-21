@@ -39,7 +39,7 @@ app.get("/youtube/search", async (req, res) => {
         result.items.forEach((video) => {
           videos.push({
             id: video.id,
-            original_name: video.name,
+            original_title: video.name,
             img: video.thumbnail,
             duration: convertDurationtoSeconds(video.duration),
           });
