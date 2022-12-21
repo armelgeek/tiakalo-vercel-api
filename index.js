@@ -20,10 +20,6 @@ function string_to_slug(str) {
 
   return str;
 }
-function convertDurationtoSeconds(duration){
-  const [minutes, seconds] = duration.split(':');
-  return Number(minutes) * 60 + Number(seconds);
-};
 app.get("/", (req, res) => {
   res.json("ping,pong");
 });
@@ -41,7 +37,7 @@ app.get("/youtube/search", async (req, res) => {
             id: video.id,
             original_title: video.name,
             img: video.thumbnail,
-            duration: convertDurationtoSeconds(video.duration),
+            duration: video.duration,
           });
         });
       }
